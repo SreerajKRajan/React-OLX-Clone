@@ -20,24 +20,20 @@
   font-size: 14px;
   color: #002f34;
 }
-
-.recommendations .cards {
+.cards {
   display: flex;
-}
-
-.moreView .cards {
-  white-space: nowrap;
-  overflow-x: scroll;
-  overflow-y: hidden;
+  flex-wrap: wrap; /* Allow wrapping to next line */
+  gap: 15px; /* Space between cards */
 }
 
 .card {
-  margin-right: 15px;
-  padding: 13px;
+  flex: 1 1 calc(25% - 15px); /* Each card takes up 25% of the width, minus the gap */
   max-width: 222px;
-  width: 222px;
+  padding: 13px;
   height: 270px;
-  display: inline-block;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
   cursor: pointer;
 }
 
@@ -57,25 +53,29 @@
   height: 100px;
   max-width: 100%;
   max-height: 100%;
-  min-height: 100%;
   text-align: center;
 }
+
 .card .content .rate {
   margin-top: 10px;
   font-size: larger;
   font-weight: bold;
 }
+
 .card .content .kilometer {
   font-size: medium;
 }
+
 .card .content .name {
   font-size: small;
 }
+
 .card .date {
   display: flex;
   justify-content: flex-end;
   font-size: small;
 }
+
 
 .recommendations {
   margin: 16px 16px 24px;
@@ -84,4 +84,28 @@
 .recommendations .heading span {
   font-size: 24px;
   color: #002f34;
+}
+/* Shimmer effect */
+.shimmer-wrapper {
+  position: relative;
+  overflow: hidden;
+  background-color: #f6f7f8;
+  background-image: linear-gradient(90deg, #f6f7f8, #edeef1, #f6f7f8);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.shimmer {
+  width: 100%;
+  height: 100%;
+  background-color: #f6f7f8;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }

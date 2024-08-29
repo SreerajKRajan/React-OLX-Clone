@@ -1,18 +1,21 @@
 .centerDiv {
-    border: 1px solid black;
-    width: max-content;
-    padding: 50px;
-    position: absolute;
-    top: 65%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 6px;
-  }
+  border: 1px solid black;
+  width: max-content;
+  padding: 20px;
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust the position */
+  border-radius: 6px;
+  background-color: white; /* Optional: Add background color */
+}
+
   .input {
     border-top-color: transparent;
     border-left-color: transparent;
     border-right-color: transparent;
     outline-color: transparent;
+    width: 100%;
   }
   
   .uploadBtn {
